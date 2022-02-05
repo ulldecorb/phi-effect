@@ -8,4 +8,18 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+h1 {
+    color:#fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+    margin-top: 2vh;
+}
+
