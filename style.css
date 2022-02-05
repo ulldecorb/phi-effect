@@ -1,3 +1,7 @@
+:root {
+    --arrow-box-size: 30vmin;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -59,17 +63,19 @@ h1 {
     animation-name: strobe;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    background-image: repeating-conic-gradient(white, black, white, black, white, black, white, black, white, black, white, black, white);
+    animation-timing-function: linear;
+    background-image: repeating-conic-gradient(red 0deg, red 40deg, orange 40deg, orange 80deg, yellow 80deg, yellow 120deg, lime 120deg, lime 160deg, green 160deg, green 200deg, blue 200deg, blue 240deg, pink 240deg, pink 280deg, violet 280deg, violet 320deg, violet 360deg, red 360deg);
+    /* background-image: repeating-conic-gradient(white, black, white, black, white, black, white, black, white, black, white, black, white); */
 }
 
 .arrow-box {
-    height: 30vmin;
-    width: 30vmin;
+    
+    height: var(--arrow-box-size);
+    width: var(--arrow-box-size);
     background-color: blue;
     border-radius: 50%;
-    top: 5vmin;
-    left: 5vmin;
+    top: calc(var(--arrow-box-size)/6);
+    left: calc(var(--arrow-box-size)/6);
     position: absolute;
     display: flex;
     justify-content: center;
@@ -97,12 +103,10 @@ h1 {
 
 
 @keyframes strobe {
-    0% {   background-image: repeating-conic-gradient(red, orange, yellow, lime, green, cyan, blue, pink, violet, red);}
-    25% {  background-image: repeating-conic-gradient(red, orange, yellow, lime, green, cyan, blue, pink, violet, red);}
-    25% {  background-image: repeating-conic-gradient(lime, green, cyan, blue, pink, violet, red, orange, yellow, lime);}
-    50% {  background-image: repeating-conic-gradient(lime, green, cyan, blue, pink, violet, red, orange, yellow, lime);}
-    50% {  background-image: repeating-conic-gradient(blue, pink, violet, red, red, orange, yellow, lime, green, cyan, blue);}
-    75% {  background-image: repeating-conic-gradient(blue, pink, violet, red, red, orange, yellow, lime, green, cyan, blue);}
-    75% { background-image: repeating-conic-gradient(red, orange, yellow, lime, green, cyan, blue, pink, violet, red );}
-    100% { background-image: repeating-conic-gradient(red, orange, yellow, lime, green, cyan, blue, pink, violet, red );}
+    0% {transform: rotate(0deg)}   
+    33% {transform: rotate(120deg)}   
+    33.1% {transform: rotate(120deg)}   
+    66% {transform: rotate(240deg)}   
+    66.1% {transform: rotate(240deg)}   
+    100% {transform: rotate(360deg)}   
 }
