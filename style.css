@@ -1,5 +1,6 @@
 :root {
-    --arrow-box-size: 30vmin;
+    --arrow-box-size: 35vmin;
+    --circle-size: 100%;
 }
 
 * {
@@ -28,10 +29,9 @@ h1 {
 }
 
 .upper-box {
-    width: 40vw;
+    width: 50vw;
     display: flex; 
     justify-content: space-between;
-
 }
 
 .box{
@@ -39,43 +39,35 @@ h1 {
     height: 40vmin;
     margin: 50px auto;
     position: relative;
-    perspective: 400px;
-    /* transform: rotate(25deg); */
-    
+    perspective: 400px;    
 }
 
 .cube {
-    /* width: 30vmin;
-    height: 30vmin; */
     width: 100%;
     height: 100%;
     position: absolute;
-    /* transform-style: preserve-3d; */
 }
 
 .circle {
-    width: 100%;
-    height: 100%;
+    width: var(--circle-size);
+    height: var(--circle-size);
     border-radius: 50%;
     margin: 0;
-    /* border: 8vmin solid black; */
     position: absolute;
     animation-name: strobe;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    background-image: repeating-conic-gradient(red 0deg, red 40deg, orange 40deg, orange 80deg, yellow 80deg, yellow 120deg, lime 120deg, lime 160deg, green 160deg, green 200deg, blue 200deg, blue 240deg, pink 240deg, pink 280deg, violet 280deg, violet 320deg, violet 360deg, red 360deg);
-    /* background-image: repeating-conic-gradient(white, black, white, black, white, black, white, black, white, black, white, black, white); */
+    /* background-image: repeating-conic-gradient(red 0deg, red 40deg, orange 40deg, orange 80deg, yellow 80deg, yellow 120deg, lime 120deg, lime 160deg, green 160deg, green 200deg, blue 200deg, blue 240deg, pink 240deg, pink 280deg, violet 280deg, violet 320deg, violet 360deg, red 360deg); */
+    background-image: repeating-conic-gradient(white, black, white, black, white, black, white, black, white, black, white, black, white);
 }
 
 .arrow-box {
-    
     height: var(--arrow-box-size);
     width: var(--arrow-box-size);
     background-color: blue;
     border-radius: 50%;
-    top: calc(var(--arrow-box-size)/6);
-    left: calc(var(--arrow-box-size)/6);
+    margin: calc(var(--arrow-box-size)/13);
     position: absolute;
     display: flex;
     justify-content: center;
@@ -84,23 +76,23 @@ h1 {
 
 .arrow {
     background-image: url('./assets/arrow.svg');
+    /* background-image: url('./assets/close_arrow.svg'); */
+    /* background-image: url('./assets/open_arrow.svg'); */
+    /* background-image: url('./assets/loop_arrow.svg'); */
     height: 10vmin;
     width: 10vmin;
     background-color: blue;
     border-radius: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    /* position: absolute; */
     top: 10vmin;
     left: 10vmin;
-    /* width: 100%; */
     text-align: center;
 }
 
 .oposite-arrow {
-    transform: rotate(180deg);
+    transform: rotateY(180deg);
 }
-
 
 @keyframes strobe {
     0% {transform: rotate(0deg)}   
