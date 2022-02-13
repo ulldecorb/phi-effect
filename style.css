@@ -139,9 +139,19 @@ h1 {
     width: 40vmin;
     position: absolute;
     box-shadow: 30px 0 black;
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 @keyframes gradient {
     from {transform: rotate(0deg)}
     to {transform: rotate(360deg)}
 }
+
+@keyframes ping {
+    0% {opacity: 1}
+    74% {opacity: 1}
+    75%, 100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
