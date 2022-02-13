@@ -39,13 +39,22 @@ h1 {
     height: 40vmin;
     margin: 50px auto;
     position: relative;
-    perspective: 400px;    
+    /* perspective: 400px;    
+    width: calc(var(--circle-size) +2vh);
+    height: calc(var(--circle-size) +2vh); */
+    position: block;
+    overflow: hidden;
+    border-radius: 50%;
 }
 
 .cube {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+    /* width:100%; */
+    /* height: 100%; */
+    /* position: block; */
+    overflow: hidden;
+    /* border-radius: 50%; */
+    height: var(--circle-size);
+    border-radius: 50%;
 }
 
 .circle {
@@ -60,6 +69,7 @@ h1 {
     animation-timing-function: linear;
     /* background-image: repeating-conic-gradient(red 0deg, red 40deg, orange 40deg, orange 80deg, yellow 80deg, yellow 120deg, lime 120deg, lime 160deg, green 160deg, green 200deg, blue 200deg, blue 240deg, pink 240deg, pink 280deg, violet 280deg, violet 320deg, violet 360deg, red 360deg); */
     background-image: repeating-conic-gradient(white, black, white, black, white, black, white, black, white, black, white, black, white);
+    animation: lateral 4s linear infinite;
 }
 
 .arrow-box {
@@ -101,6 +111,12 @@ h1 {
     66% {transform: rotate(240deg)}   
     66.1% {transform: rotate(240deg)}   
     100% {transform: rotate(360deg)}   
+}
+
+@keyframes lateral {
+    0% {margin: 0 0}
+    50% {margin: 0 10px}
+    100% {margin: 0 0}
 }
 
 .star-animation {
