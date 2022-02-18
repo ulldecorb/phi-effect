@@ -1,6 +1,6 @@
 :root {
     --arrow-box-size: 35vmin;
-    --circle-size: 100%;
+    --circle-size: 150%;
 }
 
 * {
@@ -29,60 +29,74 @@ h1 {
 }
 
 .upper-box {
-    width: 50vw;
+    width: 100vw;
     display: flex; 
     justify-content: space-between;
+    /* border: 1px solid red; */
 }
 
 .box{
-    width: 40vmin;
-    height: 40vmin;
+    width: 50vmin;
+    height: 50vmin;
     margin: 50px auto;
     position: relative;
-    /* perspective: 400px;    
-    width: calc(var(--circle-size) +2vh);
-    height: calc(var(--circle-size) +2vh); */
-    position: block;
-    overflow: hidden;
     border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
 }
 
+.margin {
+    width:0px;
+    height: 100px;
+    animation-name: margin;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* border: 1px solid red; */
+
+}
 .cube {
     /* width:100%; */
     /* height: 100%; */
     /* position: block; */
-    overflow: hidden;
-    /* border-radius: 50%; */
-    height: var(--circle-size);
+    /* overflow: hidden; */
+
+    height:60vh;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .circle {
-    width: var(--circle-size);
-    height: var(--circle-size);
-    border-radius: 50%;
-    margin: 0;
-    position: absolute;
+    width: 800px;
+    height: 800px;
+    margin: -100px;
     animation-name: strobe;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     /* background-image: repeating-conic-gradient(red 0deg, red 40deg, orange 40deg, orange 80deg, yellow 80deg, yellow 120deg, lime 120deg, lime 160deg, green 160deg, green 200deg, blue 200deg, blue 240deg, pink 240deg, pink 280deg, violet 280deg, violet 320deg, violet 360deg, red 360deg); */
     background-image: repeating-conic-gradient(white, black, white, black, white, black, white, black, white, black, white, black, white);
-    animation: lateral 4s linear infinite;
+    /* animation: lateral 4s linear infinite; */
+    /* margin-left: 200px; */
 }
 
+
 .arrow-box {
-    height: var(--arrow-box-size);
-    width: var(--arrow-box-size);
+    height: 300px;
+    width: 300px;
     background-color: blue;
     border-radius: 50%;
-    margin: calc(var(--arrow-box-size)/13);
+    /* margin: calc(var(--arrow-box-size)/13); */
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} 
 
 .arrow {
     background-image: url('./assets/arrow.svg');
@@ -105,19 +119,31 @@ h1 {
 }
 
 @keyframes strobe {
-    0% {transform: rotate(0deg)}   
-    33% {transform: rotate(120deg)}   
-    33.1% {transform: rotate(120deg)}   
-    66% {transform: rotate(240deg)}   
-    66.1% {transform: rotate(240deg)}   
+    0% {transform: rotate(0deg)}    
     100% {transform: rotate(360deg)}   
 }
 
-@keyframes lateral {
+@keyframes margin {
     0% {margin: 0 0}
-    50% {margin: 0 10px}
+    50% {margin: 0 50px}
     100% {margin: 0 0}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------Japanese star--------------------- */
 
 .star-animation {
     overflow: hidden;
@@ -155,7 +181,7 @@ h1 {
     width: 40vmin;
     position: absolute;
     box-shadow: 30px 0 black;
-    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes gradient {
@@ -163,11 +189,8 @@ h1 {
     to {transform: rotate(360deg)}
 }
 
-@keyframes ping {
-    0% {opacity: 1}
-    74% {opacity: 1}
-    75%, 100% {
-      transform: scale(1.5);
-      opacity: 0;
-    }
+@keyframes pulse {
+    0% {transform: scale(1.5)}
+    50% {transform: scale(1)}
+    100% { transform: scale(1.5)}
   }
